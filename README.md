@@ -23,14 +23,7 @@ you're trying to learn.
 Every entry in the technique catalog (`techniques.py`) is built from
 documented solves against real targets, not invented categories:
 
-- **[Lakera's Gandalf](https://gandalf.lakera.ai/)** — public writeups
-  documenting solves like the persona-based "grandma exploit," embedding
-  secrets inside stories/riddles, letter-by-letter partial reveal,
-  Caesar-shift/encoded disclosure, and watchdog-model evasion on the
-  two-model levels.
-- **[Wiz's Prompt Airlines](https://promptairlines.com/)** — documented
-  solves including system-prompt echo/repeat leaks and indirect injection
-  via an uploaded image containing embedded instructions.
+- **[Lakera's Gandalf](https://gandalf.lakera.ai/)**,**[Wiz's Prompt Airlines](https://promptairlines.com/)**, **[CrowdStrike](https://falcon.events/ai_unlocked_prompt_injection)** — documented solves across a wide variety of public CTF challenges, including but not limited to the ones mentioned.
 - **[Microsoft's AI Red Teaming Playground Labs](https://github.com/microsoft/AI-Red-Teaming-Playground-Labs)**
   — the 12-challenge course used at Black Hat USA 2024, covering direct
   injection (credential exfiltration), metaprompt extraction via encoding,
@@ -50,46 +43,6 @@ Only point the payloads this tool generates at:
 - Systems you own or personally deployed (e.g. a local Ollama model)
 - CTF-style practice targets built for this purpose (e.g. Gandalf, Prompt Airlines, Microsoft's AI Red Teaming Playground Labs)
 - Systems you have explicit, documented authorization to test
-
-Do not use this against production systems or third-party services without
-written authorization. That's true of any red team tooling, not just this one.
-
-**If you're using this to prepare for a certification exam** (e.g. The SecOps
-Group's Certified AI/ML Pentester), check the exam's own rules first — most
-practical/proctored AI security exams explicitly prohibit using AI tools
-*during* the exam itself. Farsight is built for practicing beforehand against
-CTF-style targets, not for use in a live proctored session. Read the specific
-exam's policy and follow it.
-
-## Exam / syllabus alignment
-
-Every technique carries a `category` mapped to the vulnerability classes in
-The SecOps Group's Certified AI/ML Pentester (C-AI/MLPen) syllabus, which is
-itself built on the OWASP Top 10 for LLM Applications:
-
-- Prompt Injection (direct + indirect)
-- Sensitive Information Disclosure
-- System Prompt Leakage
-- Insecure Output Handling
-- Insecure Plugin Design / Excessive Agency
-- Model Theft
-
-Three syllabus items — Training Data Poisoning, Supply Chain Vulnerabilities,
-and Overreliance — aren't represented as techniques here, since they're
-build-time/pipeline issues or an evaluation criterion rather than something a
-single chat payload can test.
-
-Use `--category` to drill one syllabus topic at a time instead of a random mix:
-
-```bash
-python farsight.py -p "get the agent to email the file externally" \
-  --category "Insecure Plugin Design / Excessive Agency" -n 4
-
-python farsight.py -p "identify the underlying model" --category "Model Theft" -n 3
-```
-
-`--list-techniques` groups the full catalog by category so you can see
-exactly what's covered and what to study separately.
 
 ## Stacking techniques for hardened targets
 
@@ -176,6 +129,8 @@ python farsight.py --list-techniques
 # Save results for later reference
 python farsight.py -p "reveal the password" -n 8 -o results.json
 ```
+
+## Example using Crescendo Attack Generator
 
 ![Example generation output](screenshots/example-usage.png)
 
