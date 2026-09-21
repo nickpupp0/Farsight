@@ -23,7 +23,7 @@ you're trying to learn.
 Every entry in the technique catalog (`techniques.py`) is built from
 documented solves against real targets, not invented categories:
 
-- **[Lakera's Agent Breaker](https://play.lakera.ai/agent-breaker/)**,**[Wiz's Prompt Airlines](https://promptairlines.com/)**, **[CrowdStrike](https://falcon.events/ai_unlocked_prompt_injection)** — documented solves across a wide variety of public CTF challenges, including but not limited to the ones mentioned.
+- **[Lakera's Agent Breaker](https://play.lakera.ai/agent-breaker/)**,**[Wiz's Prompt Airlines](https://promptairlines.com/)**, — documented solves across a wide variety of public CTF challenges, including but not limited to the ones mentioned.
 - **[Microsoft's AI Red Teaming Playground Labs](https://github.com/microsoft/AI-Red-Teaming-Playground-Labs)**
   — the 12-challenge course used at Black Hat USA 2024, covering direct
   injection (credential exfiltration), metaprompt extraction via encoding,
